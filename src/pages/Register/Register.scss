@@ -1,0 +1,53 @@
+@use "../../common";
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  color: common.$darkGreen;
+  .auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+    background-color: common.$lightGreen;
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      input {
+        width: 250px;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        border-bottom: 1px solid grey;
+      }
+      button {
+        background-color: common.$darkGreen;
+        color: common.$lightGreen;
+        transition: all 0.5s ease;
+        &:hover {
+          background-color: common.$lightGreen;
+          color: common.$darkGreen;
+          transition: all 0.5s ease;
+        }
+      }
+      p {
+        font-size: 12px;
+        color: red;
+        text-align: center;
+      }
+      span {
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+}

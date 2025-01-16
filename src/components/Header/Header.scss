@@ -1,0 +1,61 @@
+@use "../../common";
+.header {
+  .container {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border-bottom: 1px solid white;
+    margin-bottom: 20px;
+    .logo {
+      img {
+        width: 65px;
+      }
+    }
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      span {
+        cursor: pointer;
+      }
+      .link {
+        h6 {
+          font-size: 16px;
+          font-weight: 300;
+          transition: all 0.5s ease;
+          &:hover {
+            color: common.$darkGreen;
+            transition: all 0.5s ease;
+          }
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      span {
+        cursor: pointer;
+      }
+      .write {
+        background-color: common.$lightGreen;
+        color: common.$darkGreen;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 300;
+        transition: all 0.5s ease;
+        &:hover {
+          color: common.$lightGreen;
+          background-color: common.$darkGreen;
+          transition: all 0.5s ease;
+        }
+      }
+    }
+  }
+}
