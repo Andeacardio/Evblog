@@ -10,7 +10,9 @@ body {
 .app {
   display: flex;
   justify-content: center;
+  align-items: center;
   .container {
-    width: 1024px;
+    width: 1224px;
+    padding: 0px 15px 15px 15px;
   }
 }

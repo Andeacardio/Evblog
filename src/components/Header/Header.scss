@@ -1,61 +1,152 @@
 @use "../../common";
 .header {
-  .container {
-    padding: 10px 0px;
+  position: fixed;
+  width: 97%;
+  z-index: 5;
+  background-color: rgba(128, 128, 128, 0.354);
+  backdrop-filter: blur(3px);
+  height: 70px;
+  max-width: 1227px;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: all 0.5s ease;
+  .logo {
+    img {
+      width: 65px;
+    }
+    button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      background-color: common.$lightGreen;
+      border: none;
+      display: none;
+      visibility: hidden;
+      height: 30px !important;
+      width: 30px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s ease;
+    }
+  }
+  .links {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    // border-bottom: 1px solid white;
-    margin-bottom: 20px;
-    .logo {
-      img {
-        width: 65px;
-      }
+    gap: 5px !important;
+    transition: all 0.5s ease;
+    span {
+      cursor: pointer;
     }
-    .links {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      span {
-        cursor: pointer;
-      }
-      .link {
-        h6 {
-          font-size: 16px;
-          font-weight: 300;
-          transition: all 0.5s ease;
-          &:hover {
-            color: common.$darkGreen;
-            transition: all 0.5s ease;
-          }
-        }
-      }
-    }
-    .buttons {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      span {
-        cursor: pointer;
-      }
-      .write {
-        background-color: common.$lightGreen;
-        color: common.$darkGreen;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
+    .link {
+      padding: 10px 20px;
+      h6 {
+        font-size: 16px;
         font-weight: 300;
         transition: all 0.5s ease;
         &:hover {
-          color: common.$lightGreen;
-          background-color: common.$darkGreen;
+          color: common.$darkGreen;
           transition: all 0.5s ease;
         }
       }
     }
   }
+  .buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.5s ease;
+    span {
+      cursor: pointer;
+    }
+    .write {
+      background-color: common.$lightGreen;
+      color: common.$darkGreen;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 300;
+      transition: all 0.5s ease;
+      &:hover {
+        color: common.$lightGreen;
+        background-color: common.$darkGreen;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+}
+.visible {
+  display: flex !important;
+  visibility: visible !important;
+  transition: all 0.5s ease;
+}
+.hidden {
+  visibility: hidden !important;
+  display: none !important;
+  transition: all 0.5s ease;
+}
+.height {
+  height: 450px !important;
+  transition: all 0.5s ease;
+}
+.rotate {
+  transition: all 0.5s ease;
+  transform: rotate(360deg);
+}
+
+#menu {
+  transform: rotate(90deg);
+  transition: all 0.5s ease;
+}
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .header {
+    flex-direction: column;
+    transition: all 0.5s ease;
+    height: 50px;
+    gap: 20px;
+    left: -7px;
+    background-color: rgba(128, 128, 128, 0.754);
+    .logo {
+      button {
+        display: flex;
+        visibility: visible;
+      }
+    }
+    .links {
+      gap: 25px;
+      flex-direction: column;
+      visibility: hidden;
+      display: none;
+    }
+    .buttons {
+      visibility: hidden;
+      display: none;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .header {
+    flex-direction: column;
+    height: 190px;
+    gap: 10px;
+    background-color: rgba(128, 128, 128, 0.554);
+    .links {
+      gap: 25px;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
 }
