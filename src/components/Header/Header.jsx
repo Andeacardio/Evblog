@@ -2,8 +2,12 @@ import "./Header.scss";
 import Logo from "../../assets/img/logo.png";
 import { Link } from "react-router";
 import "../../common.scss";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
+import Cookies from "js-cookie";
 
 const Header = () => {
+  const { currentUser, logout } = useContext(AuthContext);
   function BurgerMenu() {
     document.getElementById("links").classList.toggle("visible");
     document.getElementById("buttons").classList.toggle("visible");
@@ -27,7 +31,15 @@ const Header = () => {
             III
           </button>
         </div>
-        <div className="links" id="links">
+        <div
+          className="links"
+          id="links"
+          onClick={() => {
+            if (window.innerWidth < 575.98) {
+              BurgerMenu();
+            }
+          }}
+        >
           <Link className="link cLink" to="/?cat=art">
             <h6>ART</h6>
           </Link>
@@ -47,9 +59,23 @@ const Header = () => {
             <h6>FOOD</h6>
           </Link>
         </div>
-        <div className="buttons" id="buttons">
-          <span>John</span>
-          <span>Log out</span>
+        <div
+          className="buttons"
+          id="buttons"
+          onClick={() => {
+            if (window.innerWidth < 575.98) {
+              BurgerMenu();
+            }
+          }}
+        >
+          <span>{currentUser?.username}</span>
+          {currentUser ? (
+            <span onClick={logout}>Log out</span>
+          ) : (
+            <Link className="link" to="/login">
+              Login
+            </Link>
+          )}
           <span className="write">
             <Link className="cLink" to="/write">
               Write

@@ -1,0 +1,108 @@
+@use "../../common";
+
+.add {
+  margin-top: 120px;
+  display: flex;
+  gap: 20px;
+  .content {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    input {
+      padding: 10px;
+      border: 1px solid common.$darkGreen;
+    }
+    .editContainer {
+      background-color: rgb(197, 192, 192);
+      height: 450px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      .editor {
+        height: 100%;
+        border: none;
+        border: 1px solid common.$darkGreen;
+      }
+    }
+  }
+  .menu {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .top {
+      border: 1px solid common.$darkGreen;
+      padding: 10px;
+      h3 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      label {
+        background-color: common.$darkGreen;
+        color: common.$lightGreen;
+        width: 110px;
+        text-align: center;
+        padding: 5px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: all 0.5s ease;
+        &:hover {
+          color: common.$darkGreen;
+          background-color: common.$lightGreen;
+          transition: all 0.5s ease;
+        }
+      }
+      .buttons {
+        display: flex;
+        gap: 20px;
+        button {
+          background-color: common.$lightGreen;
+          color: common.$darkGreen;
+          padding: 5px;
+          border: none;
+          cursor: pointer;
+          transition: all 0.5s ease;
+          &:hover {
+            color: common.$lightGreen;
+            background-color: common.$darkGreen;
+            transition: all 0.5s ease;
+          }
+        }
+      }
+    }
+    .items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border: 1px solid common.$darkGreen;
+      padding: 10px;
+      .item {
+        display: flex;
+        gap: 10px;
+        input {
+          accent-color: common.$darkGreen;
+        }
+      }
+    }
+  }
+}
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .add {
+    flex-direction: column;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .add {
+    margin-top: 250px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
